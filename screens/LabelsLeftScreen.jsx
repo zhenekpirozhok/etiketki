@@ -1,15 +1,17 @@
+import React from "react";
+import { Text, View } from "react-native";
 import Picker from "../components/Picker";
 import NumberInput from "../components/NumberInput";
 import radiuses from "../data/radiuses";
 import useLabelsLeft from "../hooks/useLabelsLeft";
-import { Text, View } from "react-native";
+import styles from "../styles/styles";
 
 export default function LabelsLeftScreen() {
   const { labelsLeft, selectedSize, currentRadius, updateLabelsLeft } =
     useLabelsLeft(radiuses);
 
   return (
-    <View style={{ padding: "5%" }}>
+    <View style={styles.container}>
       <Picker
         label={"Размер бумаги"}
         options={radiuses}
@@ -20,12 +22,12 @@ export default function LabelsLeftScreen() {
       />
       <NumberInput
         label={"Текущий радиус"}
-        style={{ backgroundColor: "white", margin: "3vh 0" }}
+        style={styles.input}
         onChangeText={(text) => {
           updateLabelsLeft(selectedSize, text);
         }}
       />
-      <Text>Этикеток осталось: {labelsLeft}</Text>
+      <Text style={styles.labelText}>Этикеток осталось: {labelsLeft}</Text>
     </View>
   );
 }
