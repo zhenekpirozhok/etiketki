@@ -9,6 +9,22 @@ const sizes = [
   { id: 8, size: "100\u00D7100", labelsQuantity: 5 },
   { id: 9, size: "75\u00D755", labelsQuantity: 11 },
   { id: 10, size: "90\u00D760", labelsQuantity: 11 },
+  { id: 11, size: "80\u00D7100", labelsQuantity: 7 },
+  { id: 12, size: "80\u00D750", labelsQuantity: 11 },
+  { id: 13, size: "100\u00D759,6 цифра", labelsQuantity: 11 },
+  { id: 14, size: "80\u00D7110", labelsQuantity: 6 },
+  { id: 15, size: "87\u00D787", labelsQuantity: 8 },
+  { id: 16, size: "38\u00D719", labelsQuantity: 26 },
+  { id: 17, size: "102\u00D774 цифра", labelsQuantity: 9 },
+  { id: 18, size: "79\u00D778", labelsQuantity: 7 },
+  { id: 19, size: "90\u00D750 цифра", labelsQuantity: 12 },
+  { id: 20, size: "70\u00D78 цифра", labelsQuantity: 8 },
+  { id: 21, size: "100\u00D754,6 цифра", labelsQuantity: 10 },
+  { id: 22, size: "70\u00D750", labelsQuantity: 12 },
+  { id: 23, size: "60\u00D745", labelsQuantity: 12 },
+  { id: 24, size: "60\u00D7120", labelsQuantity: 6 },
+  { id: 25, size: "100\u00D770 помарочная", labelsQuantity: 8 },
+  { id: 26, size: "60\u00D7100 цифра", labelsQuantity: 6 },
 ];
 
 export default sizes;
