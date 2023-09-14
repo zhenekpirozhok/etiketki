@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, StyleSheet } from "react-native";
+import {labelsSpentStyles} from "../styles/styles";
 
 const SizeInputContainer = ({ sizeObj }) => {
   const [rollsUsed, setRollsUsed] = useState(0);
@@ -11,45 +12,19 @@ const SizeInputContainer = ({ sizeObj }) => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.sizeText}>{sizeObj.size}</Text>
+    <View style={labelsSpentStyles.container}>
+      <Text style={labelsSpentStyles.sizeText}>{sizeObj.size}</Text>
       <TextInput
-        style={styles.input}
+        style={labelsSpentStyles.input}
         keyboardType="numeric"
         onChangeText={handleNumberChange}
+        placeholder="Рулонов"
       />
-      <Text style={styles.totalText}>
-        {sizeObj.labelsQuantity * rollsUsed}
+      <Text style={labelsSpentStyles.totalText}>
+        Всего: {sizeObj.labelsQuantity * rollsUsed}
       </Text>
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginBottom: 10, // Adjust as needed
-  },
-  sizeText: {
-    flex: 2, // Adjust as needed
-    marginRight: 10,
-    fontSize: 16,
-  },
-  input: {
-    flex: 1, // Adjust as needed
-    backgroundColor: "white",
-    borderColor: "gray",
-    borderWidth: 1,
-    paddingHorizontal: 10,
-    fontSize: 16,
-  },
-  totalText: {
-    flex: 2, // Adjust as needed
-    marginLeft: 10,
-    fontSize: 16,
-  },
-});
-
 export default SizeInputContainer;
-

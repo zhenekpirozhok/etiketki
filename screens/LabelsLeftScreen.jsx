@@ -4,14 +4,14 @@ import Picker from "../components/Picker";
 import NumberInput from "../components/NumberInput";
 import radiuses from "../data/radiuses";
 import useLabelsLeft from "../hooks/useLabelsLeft";
-import styles from "../styles/styles";
+import {labelsLeftStyles} from "../styles/styles";
 
 export default function LabelsLeftScreen() {
   const { labelsLeft, selectedSize, currentRadius, updateLabelsLeft } =
     useLabelsLeft(radiuses);
 
   return (
-    <View style={styles.container}>
+    <View style={labelsLeftStyles.container}>
       <Picker
         label={"Размер бумаги"}
         options={radiuses}
@@ -22,12 +22,12 @@ export default function LabelsLeftScreen() {
       />
       <NumberInput
         label={"Текущий радиус"}
-        style={styles.input}
+        style={labelsLeftStyles.input}
         onChangeText={(text) => {
           updateLabelsLeft(selectedSize, text);
         }}
       />
-      <Text style={styles.labelText}>Этикеток осталось: {labelsLeft}</Text>
+      <Text style={labelsLeftStyles.labelText}>Этикеток осталось: {labelsLeft}</Text>
     </View>
   );
 }
