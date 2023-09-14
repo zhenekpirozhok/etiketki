@@ -2,26 +2,54 @@ import { StyleSheet } from "react-native";
 
 export const labelsLeftStyles = StyleSheet.create({
   container: {
-    padding: 16,
     flex: 1,
-    backgroundColor: "#ffffff",
+    backgroundColor: "#f2f2f2",
+    paddingHorizontal: 20,
+    paddingTop: 20,
   },
   header: {
-    fontSize: 18,
+    fontSize: 24,
     fontWeight: "bold",
-    marginBottom: 8,
+    marginBottom: 20,
+  },
+  pickerContainer: {
+    marginBottom: 20,
+  },
+  pickerLabel: {
+    fontSize: 18,
+    marginBottom: 10,
+  },
+  picker: {
+    backgroundColor: "#ffffff", // Цвет фона пикера в открытом состоянии
+    borderRadius: 10,
+    borderColor: "#ccc",
+    borderWidth: 1,
+    paddingHorizontal: 10,
+    paddingVertical: 8,
+    fontSize: 18,
+    color: "#333", // Цвет текста в открытом состоянии
+    placeholderTextColor: "#999", // Цвет текста в закрытом состоянии
+},
+  inputContainer: {
+    marginBottom: 20,
+  },
+  inputLabel: {
+    fontSize: 18,
+    marginBottom: 10,
   },
   input: {
     backgroundColor: "#ffffff",
+    borderRadius: 10,
     borderColor: "#ccc",
     borderWidth: 1,
-    padding: 8,
-    marginBottom: 16,
-    fontSize: 16,
+    paddingHorizontal: 10,
+    paddingVertical: 8,
+    fontSize: 18,
   },
   labelText: {
-    fontSize: 16,
-    marginTop: 8,
+    fontSize: 18,
+    marginTop: 20,
+    fontWeight: "bold",
   },
 });
 

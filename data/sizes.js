@@ -18,7 +18,7 @@ const sizes = [
   { id: 17, size: "102\u00D774 цифра", labelsQuantity: 9 },
   { id: 18, size: "79\u00D778", labelsQuantity: 7 },
   { id: 19, size: "90\u00D750 цифра", labelsQuantity: 12 },
-  { id: 20, size: "70\u00D78 цифра", labelsQuantity: 8 },
+  { id: 20, size: "70\u00D780 цифра", labelsQuantity: 8 },
   { id: 21, size: "100\u00D754,6 цифра", labelsQuantity: 10 },
   { id: 22, size: "70\u00D750", labelsQuantity: 12 },
   { id: 23, size: "60\u00D745", labelsQuantity: 12 },
