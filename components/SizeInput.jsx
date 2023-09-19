@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, StyleSheet } from "react-native";
-import {labelsSpentStyles} from "../styles/styles";
+import styles from "../styles/labelsSpentStyles";
 
 const SizeInputContainer = ({ sizeObj, onInputChange }) => {
   const [rollsUsed, setRollsUsed] = useState(0);
@@ -13,15 +13,15 @@ const SizeInputContainer = ({ sizeObj, onInputChange }) => {
   };
 
   return (
-    <View style={labelsSpentStyles.container}>
-      <Text style={labelsSpentStyles.sizeText}>{sizeObj.size}</Text>
+    <View style={styles.container}>
+      <Text style={styles.sizeText}>{sizeObj.size}</Text>
       <TextInput
-        style={labelsSpentStyles.input}
+        style={styles.input}
         keyboardType="numeric"
         onChangeText={handleNumberChange}
         placeholder="Рулонов"
       />
-      <Text style={labelsSpentStyles.totalText}>
+      <Text style={styles.totalText}>
         Всего: {sizeObj.labelsQuantity * rollsUsed}
       </Text>
     </View>
