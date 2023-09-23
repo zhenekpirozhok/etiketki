@@ -15,6 +15,7 @@ const SelectOption = ({ label, options, selectedValue, onValueChange }) => {
 
   const onInputChange = (text) => {
     setInputValue(text);
+    setOpen(true);
   };
 
   const filteredOptions = options.filter((option) =>
