@@ -25,6 +25,10 @@ const sizes = [
   { id: 24, size: "60\u00D7120", labelsQuantity: 6 },
   { id: 25, size: "100\u00D770 помарочная", labelsQuantity: 8 },
   { id: 26, size: "60\u00D7100 цифра", labelsQuantity: 6 },
+  { id: 27, size: "102\u00D774 цифра", labelsQuantity: 9 },
+  { id: 28, size: "75\u00D760 цифра", labelsQuantity: 9 },
+  { id: 29, size: "90\u00D760 цифра", labelsQuantity: 10 },
+  { id: 30, size: "90\u00D745 цифра", labelsQuantity: 13 },
 ];
 
 export default sizes;
