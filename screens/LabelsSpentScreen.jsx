@@ -3,11 +3,15 @@ import { ScrollView, Text, View, TouchableOpacity } from "react-native";
 import SizeInputContainer from "../components/SizeInput";
 import sizes from "../data/sizes";
 import styles from "../styles/labelsSpentStyles";
+import textStyles from "../styles/textStyles";
 import { generatePDF } from "../utils/generatePDF";
 import showError from "../utils/showError";
+import DefectInput from "../components/DefectInput";
+import Defects from "../components/Defects";
 
 export default function LabelsSpentScreen() {
   const [sizeData, setSizeData] = React.useState([]);
+  const [defectData, setDefectData] = React.useState([]);
 
   const handleInputChange = (size, quantity) => {
     const newData = { size, quantity };
@@ -21,21 +25,40 @@ export default function LabelsSpentScreen() {
   };
 
   const handleButtonPress = () => {
-    generatePDF(sizeData)
-      .catch((err) => {
-        showError(err);
-      });
+    generatePDF(sizeData, defectData).catch((err) => {
+      showError(err);
+    });
+  };
+
+  const handleAddDefect = (size, quantity) => {
+    const newData = { size, quantity };
+    const updatedData = defectData.map((item) =>
+      item.size === size ? newData : item
+    );
+    if (!updatedData.some((item) => item.size === size)) {
+      updatedData.push(newData);
+    }
+    setDefectData(updatedData);
   };
 
   return (
     <ScrollView style={{ flex: 1, padding: "5%" }}>
       {sizes.map((size) => (
-        <SizeInputContainer sizeObj={size} key={size.id} onInputChange={handleInputChange}/>
+        <SizeInputContainer
+          sizeObj={size}
+          key={size.id}
+          onInputChange={handleInputChange}
+        />
       ))}
-      <TouchableOpacity
-        style={styles.button}
-        onPress={handleButtonPress}
-      >
+      <View style={{minHeight: 400}}>
+      <Text style={textStyles.header}>Браки</Text>
+      <Defects
+      sizes={sizes.map((size) => ({ id: size.id, value: size.size }))}
+      defects={defectData}
+      onAddDefect={handleAddDefect}
+      />
+      </View>
+      <TouchableOpacity style={styles.button} onPress={handleButtonPress}>
         <Text style={styles.buttonText}>Конвертировать в pdf</Text>
       </TouchableOpacity>
     </ScrollView>

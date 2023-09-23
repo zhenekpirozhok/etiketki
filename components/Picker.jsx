@@ -9,7 +9,7 @@ import * as React from "react";
 import styles from "../styles/inputStyles";
 import { Ionicons } from "@expo/vector-icons";
 
-const SelectOption = ({ options, selectedValue, onValueChange }) => {
+const SelectOption = ({ options, onValueChange }) => {
   const [inputValue, setInputValue] = React.useState("");
   const [open, setOpen] = React.useState(true);
 

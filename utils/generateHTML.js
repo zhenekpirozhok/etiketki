@@ -1,7 +1,16 @@
-export const generateHTML = (labelsSpentCollection) => {
+export const generateHTML = (labelsSpentCollection, defectsCollection) => {
     const currentDate = new Date().toLocaleDateString();
   
     const tableRows = labelsSpentCollection
+      .map((item) => `
+        <tr>
+          <td>${item.size}</td>
+          <td>${item.quantity}</td>
+        </tr>
+      `)
+      .join('');
+
+      const defectRows = defectsCollection
       .map((item) => `
         <tr>
           <td>${item.size}</td>
@@ -37,6 +46,10 @@ export const generateHTML = (labelsSpentCollection) => {
             <th>Этикеток израсходовано</th>
           </tr>
           ${tableRows}
+          <tr>
+            <th colSpan="2">Браки</th>
+          </tr>
+          ${defectRows}
         </table>
       </body>
       </html>
