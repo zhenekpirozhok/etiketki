@@ -13,11 +13,6 @@ const inputStyles = StyleSheet.create({
     paddingVertical: 8,
     fontSize: 18,
   },
-  header: {
-    fontSize: 24,
-    fontWeight: "bold",
-    marginBottom: 20,
-  },
   icon: {
     position: "absolute",
     right: 10,

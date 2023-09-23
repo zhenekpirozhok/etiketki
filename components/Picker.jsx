@@ -9,7 +9,7 @@ import * as React from "react";
 import styles from "../styles/inputStyles";
 import { Ionicons } from "@expo/vector-icons";
 
-const SelectOption = ({ label, options, selectedValue, onValueChange }) => {
+const SelectOption = ({ options, selectedValue, onValueChange }) => {
   const [inputValue, setInputValue] = React.useState("");
   const [open, setOpen] = React.useState(true);
 
@@ -21,15 +21,6 @@ const SelectOption = ({ label, options, selectedValue, onValueChange }) => {
   const filteredOptions = options.filter((option) =>
     option.value.toLowerCase().includes(inputValue.toLowerCase())
   );
-
-  React.useEffect(() => {
-    const selectedOptionObject = options.find(
-      (option) => option.id === selectedValue
-    );
-    if (selectedValue) {
-      setInputValue(selectedOptionObject.value);
-    }
-  }, [selectedValue]);
 
   const onItemSelected = (option) => {
     onValueChange(option.id);
@@ -53,7 +44,6 @@ const SelectOption = ({ label, options, selectedValue, onValueChange }) => {
 
   return (
     <View>
-      <Text style={styles.header}>{label}</Text>
       <View style={styles.inputContainer}>
         <View>
           <TextInput

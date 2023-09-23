@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, Text, TextInput, Button } from "react-native";
 import styles from "../styles/labelsLeftStyles";
 
-const NumberInput = ({ label, style, onChangeText }) => {
+const NumberInput = ({ style, onChangeText }) => {
   const [number, setNumber] = useState("");
 
   // Function to handle text input change and validate it as a number
@@ -15,7 +15,6 @@ const NumberInput = ({ label, style, onChangeText }) => {
 
   return (
     <View>
-      <Text style={styles.header}>{label}</Text>
       <TextInput
         value={number}
         onChangeText={handleNumberChange}

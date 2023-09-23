@@ -12,16 +12,16 @@ export default function LabelsLeftScreen() {
 
   return (
     <View style={styles.container}>
+      <Text style={styles.header}>{"Размер бумаги"}</Text>
       <Picker
-        label={"Размер бумаги"}
         options={radiuses}
         selectedValue={selectedSize}
         onValueChange={(optionObj) => {
           updateLabelsLeft(optionObj, currentRadius);
         }}
       />
+      <Text style={styles.header}>{"Текущий радиус"}</Text>
       <NumberInput
-        label={"Текущий радиус"}
         style={styles.input}
         onChangeText={(text) => {
           updateLabelsLeft(selectedSize, text);
