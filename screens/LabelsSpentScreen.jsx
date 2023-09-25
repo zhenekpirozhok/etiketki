@@ -8,6 +8,7 @@ import { generatePDF } from "../utils/generatePDF";
 import showError from "../utils/showError";
 import Defects from "../components/Defects";
 import useLabelsSpent from "../hooks/useLabelsSpent";
+import TypeSizeInput from "../components/TypedSizeInput";
 
 export default function LabelsSpentScreen() {
   const { sizeData, defectData, handleInputChange, handleAddDefect } =
@@ -21,36 +22,18 @@ export default function LabelsSpentScreen() {
 
   return (
     <ScrollView style={{ flex: 1, padding: "5%" }}>
-      <Text style={textStyles.header}>Термо</Text>
-      {sizes
-        .filter((size) => size.size.includes("термо"))
-        .map((size) => (
-          <SizeInputContainer
-            sizeObj={size}
-            key={size.id}
-            onInputChange={handleInputChange}
-          />
-        ))}
-      <Text style={textStyles.header}>Цифра</Text>
-      {sizes
-        .filter((size) => size.size.includes("цифра"))
-        .map((size) => (
-          <SizeInputContainer
-            sizeObj={size}
-            key={size.id}
-            onInputChange={handleInputChange}
-          />
-        ))}
-      <Text style={textStyles.header}>Помарочная</Text>
-      {sizes
-        .filter((size) => size.size.includes("помарочная"))
-        .map((size) => (
-          <SizeInputContainer
-            sizeObj={size}
-            key={size.id}
-            onInputChange={handleInputChange}
-          />
-        ))}
+      <TypeSizeInput
+        paperType={"Термо"}
+        handleInputChange={handleInputChange}
+      />
+      <TypeSizeInput
+        paperType={"Цифра"}
+        handleInputChange={handleInputChange}
+      />
+      <TypeSizeInput
+        paperType={"Помарочная"}
+        handleInputChange={handleInputChange}
+      />
       <View style={{ minHeight: 400 }}>
         <Text style={textStyles.header}>Браки</Text>
         <Defects
