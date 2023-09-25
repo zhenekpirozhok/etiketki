@@ -6,39 +6,17 @@ import styles from "../styles/labelsSpentStyles";
 import textStyles from "../styles/textStyles";
 import { generatePDF } from "../utils/generatePDF";
 import showError from "../utils/showError";
-import DefectInput from "../components/DefectInput";
 import Defects from "../components/Defects";
+import useLabelsSpent from "../hooks/useLabelsSpent";
 
 export default function LabelsSpentScreen() {
-  const [sizeData, setSizeData] = React.useState([]);
-  const [defectData, setDefectData] = React.useState([]);
-
-  const handleInputChange = (size, quantity) => {
-    const newData = { size, quantity };
-    const updatedData = sizeData.map((item) =>
-      item.size === size ? newData : item
-    );
-    if (!updatedData.some((item) => item.size === size)) {
-      updatedData.push(newData);
-    }
-    setSizeData(updatedData);
-  };
+  const { sizeData, defectData, handleInputChange, handleAddDefect } =
+    useLabelsSpent();
 
   const handleButtonPress = () => {
     generatePDF(sizeData, defectData).catch((err) => {
       showError(err);
     });
-  };
-
-  const handleAddDefect = (size, quantity) => {
-    const newData = { size, quantity };
-    const updatedData = defectData.map((item) =>
-      item.size === size ? newData : item
-    );
-    if (!updatedData.some((item) => item.size === size)) {
-      updatedData.push(newData);
-    }
-    setDefectData(updatedData);
   };
 
   return (
