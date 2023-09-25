@@ -11,7 +11,7 @@ const DefectInput = ({ sizes, onValueChange }) => {
 
   return (
     <View>
-      <View style={inputStyles.inputContainer}>
+      <View style={{}}>
         <Picker
           options={sizes}
           onValueChange={(optionId) => {
@@ -22,7 +22,7 @@ const DefectInput = ({ sizes, onValueChange }) => {
       </View>
       <View style={inputStyles.inputContainer}>
         <NumberInput
-          style={styles.input}
+          style={inputStyles.input}
           onChangeText={(text) => {
             setLabelsQuantity(+text);
             onValueChange(sizeId, +text);

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, Text, TextInput, Button } from "react-native";
 import styles from "../styles/labelsSpentStyles";
 import DefectInput from "./DefectInput";
+import textStyles from "../styles/textStyles";
 
 const Defects = ({ sizes, defects, onAddDefect }) => {
   const [currentDefect, setCurrentDefect] = useState(null);
@@ -17,7 +18,7 @@ const Defects = ({ sizes, defects, onAddDefect }) => {
       {defects.length === 0
         ? null
         : defects.map((defect) => (
-            <Text key={defect.size}>
+            <Text key={defect.size} style={textStyles.labelText}>
               Размер:{" "}
               {sizes.find((sizeObj) => sizeObj.id === defect.size).value},
               кол-во: {defect.quantity}

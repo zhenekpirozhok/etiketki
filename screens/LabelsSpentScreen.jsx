@@ -43,20 +43,43 @@ export default function LabelsSpentScreen() {
 
   return (
     <ScrollView style={{ flex: 1, padding: "5%" }}>
-      {sizes.map((size) => (
-        <SizeInputContainer
-          sizeObj={size}
-          key={size.id}
-          onInputChange={handleInputChange}
+      <Text style={textStyles.header}>Термо</Text>
+      {sizes
+        .filter((size) => size.size.includes("термо"))
+        .map((size) => (
+          <SizeInputContainer
+            sizeObj={size}
+            key={size.id}
+            onInputChange={handleInputChange}
+          />
+        ))}
+      <Text style={textStyles.header}>Цифра</Text>
+      {sizes
+        .filter((size) => size.size.includes("цифра"))
+        .map((size) => (
+          <SizeInputContainer
+            sizeObj={size}
+            key={size.id}
+            onInputChange={handleInputChange}
+          />
+        ))}
+      <Text style={textStyles.header}>Помарочная</Text>
+      {sizes
+        .filter((size) => size.size.includes("помарочная"))
+        .map((size) => (
+          <SizeInputContainer
+            sizeObj={size}
+            key={size.id}
+            onInputChange={handleInputChange}
+          />
+        ))}
+      <View style={{ minHeight: 400 }}>
+        <Text style={textStyles.header}>Браки</Text>
+        <Defects
+          sizes={sizes.map((size) => ({ id: size.id, value: size.size }))}
+          defects={defectData}
+          onAddDefect={handleAddDefect}
         />
-      ))}
-      <View style={{minHeight: 400}}>
-      <Text style={textStyles.header}>Браки</Text>
-      <Defects
-      sizes={sizes.map((size) => ({ id: size.id, value: size.size }))}
-      defects={defectData}
-      onAddDefect={handleAddDefect}
-      />
       </View>
       <TouchableOpacity style={styles.button} onPress={handleButtonPress}>
         <Text style={styles.buttonText}>Конвертировать в pdf</Text>
