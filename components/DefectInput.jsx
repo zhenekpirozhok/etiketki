@@ -6,7 +6,7 @@ import Picker from "./Picker";
 import NumberInput from "./NumberInput";
 
 const DefectInput = ({ sizes, onValueChange }) => {
-  const [sizeId, setSizeId] = useState("0");
+  const [size, setSize] = useState(sizes[0].value);
   const [labelsQuantity, setLabelsQuantity] = useState(0);
 
   return (
@@ -15,8 +15,9 @@ const DefectInput = ({ sizes, onValueChange }) => {
         <Picker
           options={sizes}
           onValueChange={(optionId) => {
-            setSizeId(optionId);
-            onValueChange(optionId, labelsQuantity);
+            const sizeValue = sizes.find(size => size.id === optionId).value;
+            setSize(sizeValue);
+            onValueChange(sizeValue, labelsQuantity);
           }}
         />
       </View>
@@ -25,7 +26,7 @@ const DefectInput = ({ sizes, onValueChange }) => {
           style={inputStyles.input}
           onChangeText={(text) => {
             setLabelsQuantity(+text);
-            onValueChange(sizeId, +text);
+            onValueChange(size, +text);
           }}
         />
       </View>

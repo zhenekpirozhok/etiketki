@@ -17,11 +17,9 @@ const Defects = ({ sizes, defects, onAddDefect }) => {
       />
       {defects.length === 0
         ? null
-        : defects.map((defect) => (
-            <Text key={defect.size} style={textStyles.labelText}>
-              Размер:{" "}
-              {sizes.find((sizeObj) => sizeObj.id === defect.size).value},
-              кол-во: {defect.quantity}
+        : defects.map((defect, index) => (
+            <Text key={index} style={textStyles.labelText}>
+              Размер:{defect.size}, кол-во: {defect.quantity}
             </Text>
           ))}
       <Button
