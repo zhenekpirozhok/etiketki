@@ -208,7 +208,25 @@ const radiuses = [
     value: '64\u00D758',
     maxRadius: 5.7,
     maxQuantity: 3300
-  }
+  },
+  {
+    id: '35',
+    value: '25\u00D716',
+    maxRadius: 5.6,
+    maxQuantity: 11000
+  },
+  {
+    id: '36',
+    value: '75\u00D755',
+    maxRadius: 5.3,
+    maxQuantity: 3500
+  },
+  {
+    id: '37',
+    value: '67\u00D765',
+    maxRadius: 5.9,
+    maxQuantity: 3200
+  },
 ];
 
 export default radiuses;
