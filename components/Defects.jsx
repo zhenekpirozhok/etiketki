@@ -3,8 +3,9 @@ import { View, Text, TextInput, Button } from "react-native";
 import styles from "../styles/labelsSpentStyles";
 import DefectInput from "./DefectInput";
 import textStyles from "../styles/textStyles";
+import DeleteIcon from "./DeleteIcon";
 
-const Defects = ({ sizes, defects, onAddDefect }) => {
+const Defects = ({ sizes, defects, onAddDefect, onDeleteDefect }) => {
   const [currentDefect, setCurrentDefect] = useState(null);
 
   return (
@@ -18,9 +19,12 @@ const Defects = ({ sizes, defects, onAddDefect }) => {
       {defects.length === 0
         ? null
         : defects.map((defect, index) => (
-            <Text key={index} style={textStyles.labelText}>
-              Размер:{defect.size}, кол-во: {defect.quantity}
+          <View style={styles.defectContainer}>
+            <Text key={index} style={textStyles.text}>
+              Размер: {defect.size}, кол-во: {defect.quantity}
             </Text>
+            <DeleteIcon onPress={() => onDeleteDefect(defect.id)}/>
+          </View>
           ))}
       <Button
         onPress={() => onAddDefect(currentDefect.size, currentDefect.quantity)}

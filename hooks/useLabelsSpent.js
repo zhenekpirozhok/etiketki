@@ -3,25 +3,35 @@ import { useState } from "react";
 export default function useLabelsSpent() {
   const [sizeData, setSizeData] = useState([]);
   const [defectData, setDefectData] = useState([]);
+  const [defectId, setDefectId] = useState(0);
 
-  const handleAddData = (size, quantity, callback, data) => {
+  const handleInputChange = (size, quantity) => {
     const newData = { size, quantity };
-    const updatedData = data.map((item) =>
+    const updatedData = sizeData.map((item) =>
       item.size === size ? newData : item
     );
     if (!updatedData.some((item) => item.size === size)) {
       updatedData.push(newData);
     }
-    callback(updatedData);
-  };
-
-  const handleInputChange = (size, quantity) => {
-    handleAddData(size, quantity, setSizeData, sizeData);
+    setSizeData(updatedData);
   };
 
   const handleAddDefect = (size, quantity) => {
-    handleAddData(size, quantity, setDefectData, defectData);
+    const newData = { size, quantity, id: defectId };
+    setDefectId(id => id + 1);
+    const updatedData = defectData.map((item) =>
+      item.size === size ? newData : item
+    );
+    if (!updatedData.some((item) => item.size === size)) {
+      updatedData.push(newData);
+    }
+    setDefectData(updatedData);
   };
 
-  return {sizeData, defectData, handleInputChange, handleAddDefect};
+  const handleDeleteDefect = (id) => {
+    const updatedData = defectData.filter((item) => item.id !== id);
+    setDefectData(updatedData);
+  }
+
+  return {sizeData, defectData, handleInputChange, handleAddDefect, handleDeleteDefect};
 }

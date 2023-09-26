@@ -11,8 +11,13 @@ import useLabelsSpent from "../hooks/useLabelsSpent";
 import TypeSizeInput from "../components/TypedSizeInput";
 
 export default function LabelsSpentScreen() {
-  const { sizeData, defectData, handleInputChange, handleAddDefect } =
-    useLabelsSpent();
+  const {
+    sizeData,
+    defectData,
+    handleInputChange,
+    handleAddDefect,
+    handleDeleteDefect,
+  } = useLabelsSpent();
 
   const handleButtonPress = () => {
     generatePDF(sizeData, defectData).catch((err) => {
@@ -40,6 +45,7 @@ export default function LabelsSpentScreen() {
           sizes={sizes.map((size) => ({ id: size.id, value: size.size }))}
           defects={defectData}
           onAddDefect={handleAddDefect}
+          onDeleteDefect={handleDeleteDefect}
         />
       </View>
       <TouchableOpacity style={styles.button} onPress={handleButtonPress}>

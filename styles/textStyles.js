@@ -11,6 +11,10 @@ const textStyles = StyleSheet.create({
     marginTop: 20,
     fontWeight: "bold",
   },
+  text: {
+    fontSize: 15,
+    marginVertical: 15,
+  }
 });
 
 export default textStyles;

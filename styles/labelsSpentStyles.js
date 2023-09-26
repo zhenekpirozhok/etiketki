@@ -47,6 +47,16 @@ const labelsSpentStyles = StyleSheet.create({
     fontWeight: "bold",
     color: "#007AFF", // Text color
   },
+  defectContainer: {
+    marginBottom: 10,
+    borderColor: '#555',
+    borderBottomWidth: 1,
+    display: "flex",
+    justifyContent: "space-between",
+    position: "relative",
+    flexDirection: "row",
+    alignItems: "center"
+  }
 });
 
 export default labelsSpentStyles;
