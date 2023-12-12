@@ -37,6 +37,10 @@ const sizes = [
   { id: 36, size: "64\u00D758 термо", labelsQuantity: 10 },
   { id: 37, size: "75\u00D760 термо", labelsQuantity: 9 },
   { id: 38, size: "25\u00D716 термо", labelsQuantity: 33 },
+  { id: 39, size: "55\u00D790 термо", labelsQuantity: 7 },
+  { id: 40, size: "75\u00D760 термо", labelsQuantity: 11 },
+  { id: 41, size: "25\u00D716 термо", labelsQuantity: 66 },
+  { id: 42, size: "61\u00D750 термо", labelsQuantity: 13 },
 ];
 
 export default sizes;

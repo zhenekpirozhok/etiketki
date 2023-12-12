@@ -1,26 +1,27 @@
 import React, { useState } from "react";
 import { View, Text, TextInput } from "react-native";
 import styles from "../styles/labelsSpentStyles";
+import textStyles from "../styles/textStyles";
 import inputStyles from "../styles/inputStyles";
-import Picker from "./Picker";
 import NumberInput from "./NumberInput";
 
-const DefectInput = ({ sizes, onValueChange }) => {
-  const [size, setSize] = useState(sizes[0].value);
+const DefectInput = ({ onValueChange }) => {
+  const [size, setSize] = useState("");
   const [labelsQuantity, setLabelsQuantity] = useState(0);
 
   return (
     <View>
-      <View style={{}}>
-        <Picker
-          options={sizes}
-          onValueChange={(optionId) => {
-            const sizeValue = sizes.find(size => size.id === optionId).value;
-            setSize(sizeValue);
-            onValueChange(sizeValue, labelsQuantity);
+      <Text style={textStyles.labelText}>Размер бумаги</Text>
+      <View style={inputStyles.inputContainer}>
+        <TextInput
+          style={inputStyles.input}
+          onChangeText={(text) => {
+            setSize(text);
+            onValueChange(text, labelsQuantity);
           }}
         />
       </View>
+      <Text style={textStyles.labelText}>Кол-во браков</Text>
       <View style={inputStyles.inputContainer}>
         <NumberInput
           style={inputStyles.input}

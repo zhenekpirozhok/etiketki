@@ -5,22 +5,21 @@ import DefectInput from "./DefectInput";
 import textStyles from "../styles/textStyles";
 import DeleteIcon from "./DeleteIcon";
 
-const Defects = ({ sizes, defects, onAddDefect, onDeleteDefect }) => {
+const Defects = ({ defects, onAddDefect, onDeleteDefect }) => {
   const [currentDefect, setCurrentDefect] = useState(null);
 
   return (
     <View>
       <DefectInput
-        sizes={sizes}
         onValueChange={(size, quantity) => {
           setCurrentDefect({ size, quantity });
         }}
       />
       {defects.length === 0
         ? null
-        : defects.map((defect, index) => (
+        : defects.map((defect) => (
           <View style={styles.defectContainer}>
-            <Text key={index} style={textStyles.text}>
+            <Text key={defect.id} style={textStyles.text}>
               Размер: {defect.size}, кол-во: {defect.quantity}
             </Text>
             <DeleteIcon onPress={() => onDeleteDefect(defect.id)}/>

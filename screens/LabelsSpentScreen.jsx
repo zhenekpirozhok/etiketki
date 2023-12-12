@@ -42,7 +42,6 @@ export default function LabelsSpentScreen() {
       <View style={{ minHeight: 400 }}>
         <Text style={textStyles.header}>Браки</Text>
         <Defects
-          sizes={sizes.map((size) => ({ id: size.id, value: size.size }))}
           defects={defectData}
           onAddDefect={handleAddDefect}
           onDeleteDefect={handleDeleteDefect}
