@@ -72,12 +72,6 @@ const radiuses = [
     maxQuantity: 2000,
   },
   {
-    id: "12",
-    value: "70\u00D750",
-    maxRadius: 5.5,
-    maxQuantity: 4000,
-  },
-  {
     id: "13",
     value: "60\u00D745",
     maxRadius: 5.6,
@@ -88,12 +82,6 @@ const radiuses = [
     value: "60\u00D7120",
     maxRadius: 5.8,
     maxQuantity: 1700,
-  },
-  {
-    id: "15",
-    value: "100\u00D770 помарочная",
-    maxRadius: 5.2,
-    maxQuantity: 2500,
   },
   {
     id: "16",
@@ -136,12 +124,6 @@ const radiuses = [
     value: "75\u00D760",
     maxRadius: 5.5,
     maxQuantity: 3300,
-  },
-  {
-    id: "23",
-    value: "100\u00D740",
-    maxRadius: 4.9,
-    maxQuantity: 4000,
   },
   {
     id: "24",
@@ -292,17 +274,50 @@ const radiuses = [
   { id: 54, value: "20\u00D730", maxRadius: 6.5, maxQuantity: 20000 },
   { id: 55, value: "87\u00D787", maxRadius: 5.3, maxQuantity: 2000 },
   { id: 56, value: "70\u00D745", maxRadius: 5.9, maxQuantity: 4500 },
-  { id: 57, value: '90\u00D745 цифра', maxRadius: 6.5, maxQuantity: 3500 },
-  { id: 58, value: '75\u00D760 цифра', maxRadius: 6.3, maxQuantity: 2500 },
-  { id: 59, value: '80\u00D750 цифры', maxRadius: 6.2, maxQuantity: 2900 },
-  { id: 60, value: '52\u00D740', maxRadius: 5.8, maxQuantity: 5000 },
-  { id: 61, value: '100\u00D7100 помарочная', maxRadius: 4.6, maxQuantity: 1500 },
-  { id: 62, value: '60\u00D724,8', maxRadius: 5.5, maxQuantity: 7500 },
-  { id: 63, value: '100\u00D760', maxRadius: 4.5, maxQuantity: 2500 },
-  { id: 64, value: '105\u00D7146', maxRadius: 5.0, maxQuantity: 1200 },
-  { id: 65, value: '72\u00D792', maxRadius: 5.7, maxQuantity: 2200 },
-  { id: 66, value: '60\u00D745 цифра', maxRadius: 6.4, maxQuantity: 3500 },
-  { id: 67, value: '70\u00D760 цифра', maxRadius: 6.5, maxQuantity: 2600 },
+  { id: 57, value: "90\u00D745 цифра", maxRadius: 6.5, maxQuantity: 3500 },
+  { id: 58, value: "75\u00D760 цифра", maxRadius: 6.3, maxQuantity: 2500 },
+  { id: 59, value: "80\u00D750 цифры", maxRadius: 6.2, maxQuantity: 2900 },
+  { id: 60, value: "52\u00D740", maxRadius: 5.8, maxQuantity: 5000 },
+  {
+    id: 61,
+    value: "100\u00D7100 помарочная",
+    maxRadius: 4.6,
+    maxQuantity: 1500,
+  },
+  { id: 63, value: "100\u00D760", maxRadius: 4.5, maxQuantity: 2500 },
+  { id: 64, value: "105\u00D7146", maxRadius: 5.0, maxQuantity: 1200 },
+  { id: 65, value: "72\u00D792", maxRadius: 5.7, maxQuantity: 2200 },
+  { id: 66, value: "60\u00D745 цифра", maxRadius: 6.4, maxQuantity: 3500 },
+  { id: 67, value: "70\u00D760 цифра", maxRadius: 6.5, maxQuantity: 2600 },
+  {
+    id: "68",
+    value: "80\u00D7100 черная подложка",
+    maxQuantity: 2000,
+    maxRadius: 5.8,
+  },
+  { id: "69", value: "90\u00D750 цифра", maxQuantity: 3000, maxRadius: 6.3 },
+  { id: "70", value: "20\u00D730", maxQuantity: 19500, maxRadius: 4.6 },
+  { id: "71", value: "102\u00D774", maxQuantity: 2500, maxRadius: 5.2 },
+  { id: "72", value: "58\u00D751", maxQuantity: 3500, maxRadius: 5.2 },
+  { id: "73", value: "80\u00D730", maxQuantity: 6500, maxRadius: 5.6 },
+  { id: "74", value: "90\u00D790", maxQuantity: 2200, maxRadius: 5.5 },
+  { id: "75", value: "20\u00D710", maxQuantity: 34000, maxRadius: 5.6 },
+  { id: "76", value: "70\u00D750", maxQuantity: 4000, maxRadius: 5.6 }, // Corrected
+  { id: "77", value: "60\u00D724,8", maxQuantity: 7500, maxRadius: 5.6 }, // Corrected
+  { id: "78", value: "45\u00D765", maxQuantity: 3200, maxRadius: 5.9 },
+  { id: "79", value: "15\u00D715", maxQuantity: 33000, maxRadius: 5.9 },
+  {
+    id: "80",
+    value: "100\u00D770 помарочная",
+    maxQuantity: 2500,
+    maxRadius: 5.1,
+  }, // Corrected
+  { id: "81", value: "61\u00D750 цифра", maxQuantity: 3200, maxRadius: 6.4 },
+  { id: "82", value: "20\u00D730 цифра", maxQuantity: 20000, maxRadius: 6.4 },
+  { id: "83", value: "90\u00D730", maxQuantity: 5000, maxRadius: 4.7 },
+  { id: "84", value: "90\u00D7110", maxQuantity: 1900, maxRadius: 5.8 },
+  { id: "85", value: "70\u00D750 цифра", maxQuantity: 3000, maxRadius: 6.1 },
+  { id: "86", value: "100\u00D740", maxQuantity: 4000, maxRadius: 5.0 }, // Corrected
 ];
 
 export default radiuses;
