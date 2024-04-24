@@ -18,12 +18,12 @@ const Defects = ({ defects, onAddDefect, onDeleteDefect }) => {
       {defects.length === 0
         ? null
         : defects.map((defect) => (
-          <View style={styles.defectContainer}>
-            <Text key={defect.id} style={textStyles.text}>
-              Размер: {defect.size}, кол-во: {defect.quantity}
-            </Text>
-            <DeleteIcon onPress={() => onDeleteDefect(defect.id)}/>
-          </View>
+            <View style={styles.defectContainer} key={defect.id}>
+              <Text key={defect.id} style={textStyles.text}>
+                Размер: {defect.size}, кол-во: {defect.quantity}
+              </Text>
+              <DeleteIcon onPress={() => onDeleteDefect(defect.id)} />
+            </View>
           ))}
       <Button
         onPress={() => onAddDefect(currentDefect.size, currentDefect.quantity)}

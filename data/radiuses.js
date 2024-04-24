@@ -258,7 +258,7 @@ const radiuses = [
     maxQuantity: 2800,
   },
   {
-    id: "46",
+    id: "23",
     value: "72\u00D774",
     maxRadius: 5.2,
     maxQuantity: 2800,
